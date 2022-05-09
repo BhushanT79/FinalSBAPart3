@@ -1,0 +1,105 @@
+<div class="logo">
+
+</div>
+<div class="navbar">
+
+</div>
+
+{{interestsdata.about}}
+<div>
+ <h3><label> Welcome to E-dating Application </label></h3>
+    <button (click)="navpage()">Click here to get User Profiles</button>
+
+</div>
+ <br>
+<div>
+		<label>Select any UserId : </label>
+		<select name="userselect" [(ngModel)]="selectedLevel" (change)="navpage()" >
+          
+          <option *ngFor="let interest of interestsdata" [value]="interest.userId">
+            {{interest.userId}}
+          </option>
+          </select>
+
+    
+</div>
+<br>
+<div class="sidebar">
+</div>
+
+
+<div>
+<form>
+	<div class="form-group"> 
+         <label for="Inputpassword">UserId  </label>
+        <input type="text" class="form-control" name="userId" value={{userdata.userId}}>
+    </div>
+ 
+    <div class="form-group">
+        <label for="Inputname">Name </label>
+        <input type="text" class="form-control" name="name" value={{userdata.name}}>
+    </div>
+    <div class="form-group">
+        <label for="Inputusername">User Name </label>
+        <input type="text" class="form-control" name="username" value={{userdata.username}}>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="exampleInputage">Age  		</label>
+        <input type="number" class="form-control" name="age" value={{userdata.age}}>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputemail">Email  </label>
+        <input type="email" class="form-control" name="email"  value={{userdata.email}} >
+    </div>
+
+    
+     <div class="form-group">
+        <label for="exampleInputphonenumber">Phone  </label>
+        <input type="number" class="form-control" name="phonenumber"  value={{userdata.phoneNumber}}>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputstreetaddress">Gender  </label>
+        <input type="text" class="form-control" name="gender"  value={{userdata.gender}}>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputcity">City  </label>
+        <input type="text" class="form-control" name="city"  value={{userdata.city}}>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputcountry">Country  </label>
+        <input type="text" class="form-control" name="country"  value={{userdata.country}}>
+    </div>
+</form>   
+</div>
+<div class="container">
+  <h3>All User Interests</h3>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th class="h1">User Id</th>
+          <th class="h2">Likes</th>
+          <th class="h3">Dislikes</th>
+          <th class="h4">Hobies</th>
+          <th class="h6">Profile URL</th>
+          <th class="h7">About</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let interestdata of interestsdata">
+        <td>{{interestdata.userId }}</td>
+        <td>{{interestdata.likes }}</td>
+        <td>{{interestdata.dislikes}}</td>
+        <td>{{interestdata.hobbies}}</td>
+        <td>{{interestdata.profileUrl}}</td>
+        <td>{{interestdata.about}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
